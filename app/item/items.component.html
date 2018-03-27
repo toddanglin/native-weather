@@ -1,0 +1,19 @@
+
+<ActionBar title="Weather" class="action-bar">
+    <ActionItem (tap)="addCity($event)" ios.position="left">
+        <Button [text]="'ion-ios-plus-outline' | fonticon" class="ion" style="font-size:30;"></Button>
+     </ActionItem>
+     <ActionItem (tap)="addCity($event)" ios.position="right">
+        <Button [text]="'ion-ios-loop-strong' | fonticon" class="action-item ion" style="font-size:30;"></Button>
+     </ActionItem>
+</ActionBar>
+
+<StackLayout class="page">
+    <StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <weather-card *ngFor="let forecast of forecasts" [forecast]="forecast"></weather-card>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</StackLayout>
